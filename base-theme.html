@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{PageTitle}</title>
+  <meta name="description" content="締め付けない。でも、ちゃんと支える。ノンワイヤー×シームレス設計のナイトブラ Yuiel（ユイエル）。¥3,980（税込）送料無料。">
+  <meta property="og:title" content="締め付けない。でも、支える。| Yuiel ナイトブラ">
+  <meta property="og:description" content="ノンワイヤー×シームレス無縫製。つけていることを忘れる、新しいナイトブラ。¥3,980（税込）送料無料。">
+  <meta property="og:type" content="website">
+  {FaviconTag}
+  {CanonicalTag}
+  {MetaItemInfoTag}
+  {MetaShopInfoTag}
+  {BackgroundTag}
+  {LogoTag}
+  {ItemAttentionTag}
+  {IllegalReportTag}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ================================
+       Design Tokens
+    ================================ */
+    :root {
+      --primary: #9db9c2;
+      --primary-light: #c8dde4;
+      --primary-dark: #5a8491;
+      --gold: #c9a96e;
+      --gold-light: #d4bc8e;
+      --beige: #f5ede5;
+      --bg: #faf8f6;
+      --text: #2c2c2c;
+      --text-light: #888888;
+      --white: #ffffff;
+      --font-en: 'Cormorant Garamond', serif;
+      --font-ja: 'Noto Sans JP', sans-serif;
+      --font-num: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-ja);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .section-label {
+      font-family: var(--font-en);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .section-title-ja {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 40px;
+      background: var(--text);
+      color: var(--white);
+      font-family: var(--font-ja);
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 36px;
+      background: transparent;
+      color: var(--text);
+      font-family: var(--font-ja);
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--text);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { background: var(--text); color: var(--white); }
+
+    /* ================================
+       Header
+    ================================ */
+    .header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(250,248,246,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05); transition: box-shadow 0.3s;
+    }
+    .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    }
+    .logo { font-family: var(--font-en); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text); }
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a { font-size: 0.82rem; font-weight: 400; letter-spacing: 0.08em; color: var(--text-light); transition: color 0.3s; }
+    .nav a:hover { color: var(--text); }
+    .nav-cart {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border: 1px solid var(--primary);
+      font-size: 0.8rem; color: var(--primary-dark) !important;
+    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+    .hamburger span { width: 24px; height: 1.5px; background: var(--text); transition: 0.3s; }
+
+    /* ================================
+       INDEX PAGE STYLES
+    ================================ */
+
+    /* Hero */
+    .hero {
+      margin-top: 72px; position: relative; min-height: 90vh;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--beige) 0%, var(--primary-light) 100%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: url('images/hero-main.webp') center/cover no-repeat; opacity: 0.3;
+    }
+    .hero-inner {
+      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-content { max-width: 560px; }
+    .hero-label {
+      font-family: var(--font-en); font-size: 0.75rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: var(--font-ja); font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500; line-height: 1.5; letter-spacing: 0.08em; margin-bottom: 24px;
+    }
+    .hero-subtitle {
+      font-size: 1rem; font-weight: 300; line-height: 2;
+      color: var(--text); opacity: 0.8; margin-bottom: 40px;
+    }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-image { display: flex; align-items: center; justify-content: center; }
+    .hero-image-placeholder {
+      width: 100%; max-width: 480px; aspect-ratio: 3/4;
+      background: linear-gradient(145deg, var(--primary-light), var(--beige));
+      border-radius: 4px; overflow: hidden;
+    }
+    .hero-image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+    .scroll-indicator {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      font-family: var(--font-en); font-size: 0.7rem; letter-spacing: 0.15em; color: var(--text-light);
+    }
+    .scroll-indicator::after {
+      content: ''; width: 1px; height: 40px; background: var(--text-light);
+      animation: scrollDown 2s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* Trust Bar */
+    .trust { padding: 48px 0; background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.04); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    .trust-item { padding: 24px 16px; }
+    .trust-icon { width: 40px; height: 40px; margin: 0 auto 12px; }
+    .trust-icon svg { width: 40px; height: 40px; stroke: var(--primary-dark); stroke-width: 1.5; fill: none; }
+    .trust-title { font-size: 0.85rem; font-weight: 500; margin-bottom: 4px; }
+    .trust-desc { font-size: 0.75rem; color: var(--text-light); }
+
+    /* Philosophy */
+    .philosophy { padding: 120px 0; background: var(--bg); }
+    .philosophy-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .philosophy-content { max-width: 500px; }
+    .philosophy-text { font-size: 0.95rem; line-height: 2.2; margin-bottom: 40px; }
+    .philosophy-badges { display: flex; gap: 32px; }
+    .badge { text-align: center; }
+    .badge-number { font-family: var(--font-num); font-size: 2rem; font-weight: 600; color: var(--primary-dark); line-height: 1.2; }
+    .badge-label { font-size: 0.72rem; color: var(--text-light); margin-top: 4px; }
+    .philosophy-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .philosophy-img {
+      aspect-ratio: 3/4; background: linear-gradient(145deg, var(--primary-light), var(--beige));
+      border-radius: 4px; overflow: hidden;
+    }
+    .philosophy-img img { width: 100%; height: 100%; object-fit: cover; }
+    .philosophy-img:first-child { grid-row: 1 / 3; aspect-ratio: auto; }
+
+    /* Why Yuiel */
+    .why { padding: 120px 0; background: var(--white); }
+    .why-header { text-align: center; margin-bottom: 64px; }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .why-card {
+      padding: 40px 32px; background: var(--bg); border-radius: 4px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+    .why-card-icon {
+      width: 48px; height: 48px; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--primary-light); border-radius: 50%;
+    }
+    .why-card-icon svg { width: 24px; height: 24px; stroke: var(--primary-dark); stroke-width: 1.5; fill: none; }
+    .why-card-title { font-size: 1rem; font-weight: 500; margin-bottom: 12px; line-height: 1.5; }
+    .why-card-text { font-size: 0.85rem; color: var(--text-light); line-height: 1.9; }
+
+    /* Feature Showcase */
+    .showcase { padding: 120px 0; background: var(--bg); }
+    .showcase-block {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; margin-bottom: 100px;
+    }
+    .showcase-block:last-child { margin-bottom: 0; }
+    .showcase-block.reverse .showcase-image { order: -1; }
+    .showcase-label {
+      font-family: var(--font-en); font-size: 0.7rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .showcase-title { font-size: 1.5rem; font-weight: 500; line-height: 1.6; margin-bottom: 20px; }
+    .showcase-text { font-size: 0.9rem; line-height: 2; color: var(--text); opacity: 0.8; margin-bottom: 24px; }
+    .showcase-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+    .showcase-tag {
+      padding: 6px 16px; background: var(--primary-light); font-size: 0.78rem;
+      color: var(--primary-dark); border-radius: 20px; letter-spacing: 0.05em;
+    }
+    .showcase-image {
+      aspect-ratio: 4/5; background: linear-gradient(145deg, var(--primary-light), var(--beige));
+      border-radius: 4px; overflow: hidden;
+    }
+    .showcase-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Color Palette */
+    .colors { padding: 120px 0; background: var(--white); }
+    .colors-header { text-align: center; margin-bottom: 64px; }
+    .colors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .color-card { text-align: center; }
+    .color-swatch {
+      aspect-ratio: 3/4; border-radius: 4px; margin-bottom: 20px;
+      overflow: hidden; transition: transform 0.3s;
+    }
+    .color-swatch img { width: 100%; height: 100%; object-fit: cover; }
+    .color-card:hover .color-swatch { transform: scale(1.02); }
+    .color-swatch.white { background: linear-gradient(145deg, #f0eeec, #e8e5e2); }
+    .color-swatch.beige { background: linear-gradient(145deg, #d4c5b5, #c8b9a8); }
+    .color-swatch.khaki { background: linear-gradient(145deg, #8b7b6b, #7a6a5a); }
+    .color-swatch.black { background: linear-gradient(145deg, #3a3a3a, #2c2c2c); }
+    .color-name-en { font-family: var(--font-en); font-size: 1.1rem; font-weight: 500; margin-bottom: 4px; }
+    .color-name-ja { font-size: 0.78rem; color: var(--text-light); margin-bottom: 8px; }
+    .color-caption { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: var(--text); opacity: 0.7; }
+
+    /* Products Grid */
+    .products { padding: 120px 0; background: var(--bg); }
+    .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .product-card {
+      background: var(--white); border-radius: 4px; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .product-card-image {
+      aspect-ratio: 1; background: linear-gradient(145deg, var(--primary-light), var(--beige));
+      position: relative; overflow: hidden;
+    }
+    .product-card-image img { width: 100%; height: 100%; object-fit: cover; }
+    .product-badge {
+      position: absolute; top: 12px; left: 12px; padding: 4px 12px;
+      background: var(--gold); color: var(--white); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.05em;
+    }
+    .product-card-info { padding: 24px; }
+    .product-card-name { font-size: 0.9rem; font-weight: 400; margin-bottom: 4px; }
+    .product-card-sub { font-size: 0.78rem; color: var(--text-light); margin-bottom: 12px; }
+    .product-card-price { font-family: var(--font-num); font-size: 1.1rem; font-weight: 500; margin-bottom: 16px; }
+    .product-card-price small { font-size: 0.75rem; font-weight: 300; color: var(--text-light); }
+    .product-card-btn {
+      width: 100%; padding: 12px; background: var(--text); color: var(--white);
+      border: none; font-family: var(--font-ja); font-size: 0.82rem;
+      letter-spacing: 0.1em; cursor: pointer; transition: background 0.3s;
+    }
+    .product-card-btn:hover { background: var(--primary-dark); }
+
+    /* Reviews (shared) */
+    .reviews, .product-reviews { padding: 120px 0; background: var(--white); }
+    .reviews-header { text-align: center; margin-bottom: 64px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .review-card { padding: 40px 32px; background: var(--bg); border-radius: 4px; position: relative; }
+    .review-stars { display: flex; gap: 2px; margin-bottom: 16px; }
+    .review-text { font-size: 0.88rem; line-height: 2; margin-bottom: 24px; }
+    .review-author { display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); }
+    .review-avatar {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; color: var(--primary-dark); font-weight: 500;
+    }
+    .review-name { font-size: 0.82rem; font-weight: 500; }
+    .review-meta { font-size: 0.72rem; color: var(--text-light); }
+    .review-verified { font-size: 0.7rem; color: var(--primary-dark); margin-top: 2px; }
+
+    /* CTA Banner */
+    .cta-banner {
+      padding: 120px 0; position: relative; text-align: center;
+      color: var(--white); overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background:
+        linear-gradient(135deg, rgba(90,132,145,0.92) 0%, rgba(44,44,44,0.88) 100%),
+        url('images/cta-bg.webp') center/cover no-repeat;
+      background-blend-mode: multiply;
+    }
+    .cta-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+    .cta-label {
+      font-family: var(--font-en); font-size: 0.75rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold-light); margin-bottom: 24px;
+    }
+    .cta-title {
+      font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 500;
+      line-height: 1.7; margin-bottom: 16px; letter-spacing: 0.08em;
+    }
+    .cta-subtitle { font-size: 0.95rem; font-weight: 300; opacity: 0.85; margin-bottom: 40px; line-height: 1.8; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 18px 48px; background: var(--white); color: var(--text);
+      font-family: var(--font-ja); font-size: 0.95rem; font-weight: 500;
+      letter-spacing: 0.12em; border: none; cursor: pointer; transition: all 0.3s;
+    }
+    .cta-btn:hover { background: var(--gold); color: var(--white); transform: translateY(-2px); }
+    .cta-note { margin-top: 20px; font-size: 0.82rem; opacity: 0.7; font-family: var(--font-num); }
+
+    /* ================================
+       ITEM PAGE STYLES
+    ================================ */
+
+    /* Breadcrumb */
+    .breadcrumb {
+      margin-top: 72px; padding: 16px 0; font-size: 0.78rem; color: var(--text-light);
+      background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .breadcrumb a { color: var(--text-light); transition: color 0.3s; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* Product Main */
+    .product-main { padding: 60px 0; background: var(--white); }
+    .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+    /* Gallery */
+    .gallery { position: sticky; top: 96px; }
+    .gallery-main {
+      aspect-ratio: 1; background: linear-gradient(145deg, var(--primary-light), var(--beige));
+      border-radius: 4px; margin-bottom: 12px; overflow: hidden;
+    }
+    .gallery-main img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+    .gallery-thumb {
+      aspect-ratio: 1; background: linear-gradient(145deg, var(--primary-light), var(--beige));
+      border-radius: 4px; border: 2px solid transparent; cursor: pointer;
+      transition: border-color 0.3s; overflow: hidden;
+    }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumb.active, .gallery-thumb:hover { border-color: var(--primary-dark); }
+
+    /* Product Info */
+    .product-info { padding-top: 8px; }
+    .product-badges { display: flex; gap: 8px; margin-bottom: 16px; }
+    .p-badge { padding: 4px 12px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.05em; border-radius: 2px; }
+    .p-badge.new { background: var(--primary-light); color: var(--primary-dark); }
+    .p-badge.popular { background: var(--gold); color: var(--white); }
+    .product-name { font-size: 1.6rem; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 4px; }
+    .product-subtitle { font-size: 0.9rem; color: var(--text-light); margin-bottom: 16px; }
+    .product-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+    .product-rating-stars { display: flex; gap: 2px; align-items: center; }
+    .product-rating-text { font-family: var(--font-num); font-size: 0.85rem; color: var(--text-light); }
+    .product-price { font-family: var(--font-num); font-size: 2rem; font-weight: 600; margin-bottom: 4px; }
+    .product-price small { font-size: 0.85rem; font-weight: 300; color: var(--text-light); }
+    .product-price-note { font-size: 0.78rem; color: var(--primary-dark); margin-bottom: 32px; }
+
+    /* Options */
+    .option-group { margin-bottom: 28px; }
+    .option-label { font-size: 0.82rem; font-weight: 500; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .option-label span { font-weight: 300; color: var(--text-light); }
+    .color-options { display: flex; gap: 10px; }
+    .color-option {
+      width: 40px; height: 40px; border-radius: 50%; border: 2px solid transparent;
+      cursor: pointer; transition: all 0.3s; position: relative;
+    }
+    .color-option:hover, .color-option.active { border-color: var(--text); transform: scale(1.1); }
+    .color-option.white { background: #f0eeec; border-color: #ddd; }
+    .color-option.white.active { border-color: var(--text); }
+    .color-option.beige { background: #d4c5b5; }
+    .color-option.khaki { background: #8b7b6b; }
+    .color-option.black { background: #2c2c2c; }
+    .size-options { display: flex; gap: 8px; flex-wrap: wrap; }
+    .size-option {
+      min-width: 56px; padding: 10px 16px; border: 1px solid #ddd; background: var(--white);
+      text-align: center; font-size: 0.82rem; font-family: var(--font-num);
+      cursor: pointer; transition: all 0.3s; border-radius: 2px;
+    }
+    .size-option:hover, .size-option.active { border-color: var(--text); background: var(--text); color: var(--white); }
+    .size-hint { font-size: 0.75rem; color: var(--primary-dark); margin-top: 8px; }
+
+    /* Quantity */
+    .quantity-selector { display: inline-flex; align-items: center; border: 1px solid #ddd; }
+    .qty-btn {
+      width: 44px; height: 44px; border: none; background: var(--bg);
+      font-size: 1.1rem; cursor: pointer; transition: background 0.3s;
+    }
+    .qty-btn:hover { background: var(--primary-light); }
+    .qty-value {
+      width: 56px; text-align: center; font-family: var(--font-num); font-size: 0.95rem;
+      border: none; border-left: 1px solid #ddd; border-right: 1px solid #ddd; height: 44px; line-height: 44px;
+    }
+
+    /* Add to cart */
+    .add-to-cart {
+      width: 100%; padding: 18px; background: var(--text); color: var(--white); border: none;
+      font-family: var(--font-ja); font-size: 1rem; font-weight: 500;
+      letter-spacing: 0.15em; cursor: pointer; transition: all 0.3s; margin-bottom: 16px;
+    }
+    .add-to-cart:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    /* BASE cart form styling */
+    .base-cart-form { margin-bottom: 16px; }
+    .base-cart-form select {
+      width: 100%; padding: 12px 16px; border: 1px solid #ddd; background: var(--white);
+      font-family: var(--font-ja); font-size: 0.85rem; margin-bottom: 12px;
+      border-radius: 2px; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+    }
+    .base-cart-form input[type="submit"],
+    .base-cart-form button[type="submit"] {
+      width: 100%; padding: 18px; background: var(--text); color: var(--white); border: none;
+      font-family: var(--font-ja); font-size: 1rem; font-weight: 500;
+      letter-spacing: 0.15em; cursor: pointer; transition: all 0.3s;
+    }
+    .base-cart-form input[type="submit"]:hover,
+    .base-cart-form button[type="submit"]:hover { background: var(--primary-dark); }
+
+    /* Set offer */
+    .set-offer { padding: 20px; background: var(--beige); border-radius: 4px; margin-bottom: 24px; }
+    .set-offer-title { font-family: var(--font-en); font-size: 0.82rem; font-weight: 500; margin-bottom: 8px; color: var(--gold); letter-spacing: 0.08em; }
+    .set-offer-items { display: flex; flex-direction: column; gap: 6px; }
+    .set-offer-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; }
+    .set-offer-item .discount { color: var(--gold); font-weight: 500; font-family: var(--font-num); }
+
+    /* Trust icons */
+    .product-trust { display: flex; flex-direction: column; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); }
+    .product-trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--text-light); }
+    .product-trust-item svg { flex-shrink: 0; }
+
+    /* Features List */
+    .features-section { padding: 80px 0; background: var(--bg); }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-item { display: flex; gap: 16px; padding: 28px; background: var(--white); border-radius: 4px; }
+    .feature-icon { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--primary-light); border-radius: 50%; }
+    .feature-title { font-size: 0.88rem; font-weight: 500; margin-bottom: 6px; }
+    .feature-desc { font-size: 0.78rem; color: var(--text-light); line-height: 1.7; }
+
+    /* Specs */
+    .specs-section { padding: 80px 0; background: var(--white); }
+    .specs-inner { max-width: 800px; margin: 0 auto; }
+    .specs-header { text-align: center; margin-bottom: 48px; }
+    .specs-table { width: 100%; border-collapse: collapse; }
+    .specs-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .specs-table th { text-align: left; padding: 16px 20px; font-size: 0.85rem; font-weight: 500; width: 160px; vertical-align: top; }
+    .specs-table td { padding: 16px 20px; font-size: 0.85rem; color: var(--text-light); }
+
+    /* Size Guide */
+    .size-guide { padding: 80px 0; background: var(--bg); }
+    .size-guide-inner { max-width: 800px; margin: 0 auto; }
+    .size-guide-header { text-align: center; margin-bottom: 48px; }
+    .size-note { padding: 20px 24px; background: var(--primary-light); border-radius: 4px; font-size: 0.82rem; line-height: 1.8; margin-bottom: 32px; }
+    .cup-table, .size-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+    .cup-table th, .size-table th {
+      padding: 12px 16px; background: var(--text); color: var(--white);
+      font-size: 0.78rem; font-weight: 500; text-align: center; letter-spacing: 0.05em;
+    }
+    .cup-table td, .size-table td {
+      padding: 12px 16px; text-align: center; font-size: 0.82rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06); font-family: var(--font-num);
+    }
+    .cup-table tr:nth-child(even), .size-table tr:nth-child(even) { background: var(--white); }
+    .size-table .recommended { background: var(--beige); font-weight: 500; }
+
+    /* FAQ */
+    .faq { padding: 80px 0; background: var(--bg); }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-header { text-align: center; margin-bottom: 48px; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .faq-question {
+      width: 100%; padding: 20px 0; background: none; border: none;
+      font-family: var(--font-ja); font-size: 0.92rem; font-weight: 500;
+      text-align: left; cursor: pointer; display: flex; justify-content: space-between;
+      align-items: center; color: var(--text);
+    }
+    .faq-question::after {
+      content: '+'; font-family: var(--font-num); font-size: 1.2rem; font-weight: 300;
+      color: var(--text-light); transition: transform 0.3s;
+    }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
+    .faq-answer p { font-size: 0.85rem; color: var(--text-light); line-height: 2; }
+
+    /* Sticky Cart (Mobile) */
+    .sticky-cart {
+      display: none; position: fixed; bottom: 0; left: 0; width: 100%;
+      background: var(--white); border-top: 1px solid rgba(0,0,0,0.08);
+      padding: 12px 24px; z-index: 999; box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    }
+    .sticky-cart-inner { display: flex; align-items: center; justify-content: space-between; max-width: 600px; margin: 0 auto; }
+    .sticky-cart-info { font-size: 0.82rem; }
+    .sticky-cart-info .name { font-weight: 500; }
+    .sticky-cart-info .price { font-family: var(--font-num); font-weight: 600; }
+    .sticky-cart-btn {
+      padding: 12px 28px; background: var(--text); color: var(--white);
+      border: none; font-family: var(--font-ja); font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.1em; cursor: pointer;
+    }
+
+    /* ================================
+       BASE Item List (for index ItemsLoop)
+    ================================ */
+    .base-items-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+      padding: 80px 0;
+    }
+    .base-item-card {
+      background: var(--white); border-radius: 4px; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .base-item-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .base-item-card a { display: block; }
+    .base-item-card .item-img {
+      aspect-ratio: 1; overflow: hidden;
+      background: linear-gradient(145deg, var(--primary-light), var(--beige));
+    }
+    .base-item-card .item-img img { width: 100%; height: 100%; object-fit: cover; }
+    .base-item-card .item-info { padding: 24px; }
+    .base-item-card .item-title { font-size: 0.9rem; font-weight: 400; margin-bottom: 8px; }
+    .base-item-card .item-price {
+      font-family: var(--font-num); font-size: 1.1rem; font-weight: 500;
+    }
+
+    /* ================================
+       Footer
+    ================================ */
+    .footer { padding: 80px 0 40px; background: var(--text); color: rgba(255,255,255,0.6); }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+    .footer-brand .logo { color: var(--white); margin-bottom: 12px; }
+    .footer-tagline { font-size: 0.82rem; line-height: 1.8; opacity: 0.6; }
+    .footer-col-title {
+      font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.6); transition: color 0.3s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center; font-size: 0.72rem; font-family: var(--font-num); opacity: 0.4;
+    }
+
+    /* ================================
+       Responsive
+    ================================ */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 60px 24px; }
+      .hero-content { max-width: 100%; }
+      .hero-cta { justify-content: center; }
+      .hero-image { display: none; }
+      .philosophy-inner { grid-template-columns: 1fr; gap: 48px; }
+      .philosophy-content { max-width: 100%; }
+      .showcase-block { grid-template-columns: 1fr; gap: 40px; }
+      .showcase-block.reverse .showcase-image { order: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .hamburger { display: flex; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: 1fr; }
+      .colors-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid, .base-items-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .philosophy-badges { justify-content: center; }
+      .product-grid { grid-template-columns: 1fr; gap: 32px; }
+      .gallery { position: static; }
+      .features-grid { grid-template-columns: 1fr; }
+      .sticky-cart { display: block; }
+      .product-reviews { padding-bottom: 120px; }
+      .faq { padding-bottom: 120px; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-grid { grid-template-columns: 1fr; }
+      .colors-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ================================
+       BASE Default Overrides
+    ================================ */
+    /* Hide BASE's default elements we don't need */
+    .base-default-header { display: none !important; }
+  </style>
+  {GoogleAnalyticsTag}
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER (共通 — 全ページ表示)
+  ============================================ -->
+  {BASEMenuTag}
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Yuiel</a>
+      <nav class="nav">
+        <a href="/#products">商品一覧</a>
+        <a href="/#philosophy">ブランド</a>
+        <a href="/#reviews">レビュー</a>
+        <a href="/" class="nav-cart"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Cart</a>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       INDEX PAGE（トップページ）
+  ============================================ -->
+  {block:IndexPage}
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content fade-in">
+        <p class="hero-label">Yuiel Night Bra</p>
+        <h1 class="hero-title">
+          締め付けない。<br>でも、ちゃんと支える。
+        </h1>
+        <p class="hero-subtitle">
+          ノンワイヤー × シームレス設計。<br>
+          つけていることを忘れる、新しいナイトブラ。
+        </p>
+        <div class="hero-cta">
+          <a href="/#products" class="btn-primary">商品を見る</a>
+          <a href="/#philosophy" class="btn-outline">Brand Story</a>
+        </div>
+      </div>
+      <div class="hero-image fade-in">
+        <div class="hero-image-placeholder">
+          <img src="images/hero-main.webp" alt="Yuiel ナイトブラ" loading="eager">
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">Scroll</div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item fade-in">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 4v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="trust-title">全国送料無料</div>
+          <div class="trust-desc">5,000円以上のご注文</div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          </div>
+          <div class="trust-title">返金保証付き</div>
+          <div class="trust-desc">安心してお試しください</div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="trust-title">安心・安全決済</div>
+          <div class="trust-desc">SSL暗号化対応</div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div class="trust-title">最短翌日発送</div>
+          <div class="trust-desc">平日14時までのご注文</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="philosophy" id="philosophy">
+    <div class="container">
+      <div class="philosophy-inner">
+        <div class="philosophy-content fade-in">
+          <p class="section-label">Our Philosophy</p>
+          <h2 class="section-title-ja">ワイヤーをなくした。縫い目もなくした。<br>残したのは、心地よさだけ。</h2>
+          <p class="philosophy-text">
+            夜のブラに、我慢はいらない。<br>
+            Yuielはそこから始まりました。<br><br>
+            ノンワイヤーで、締め付けない。<br>
+            シームレスで、跡を残さない。<br>
+            固定カップで、手間をかけない。<br><br>
+            引き算の設計で、<br>
+            つけていることを忘れる一枚に。
+          </p>
+          <div class="philosophy-badges">
+            <div class="badge">
+              <div class="badge-number">0</div>
+              <div class="badge-label">縫い目ゼロ。跡も残さない。</div>
+            </div>
+            <div class="badge">
+              <div class="badge-number">OK</div>
+              <div class="badge-label">洗濯機でそのまま洗える。</div>
+            </div>
+            <div class="badge">
+              <div class="badge-number">4</div>
+              <div class="badge-label">選べる色、4色。</div>
+            </div>
+          </div>
+        </div>
+        <div class="philosophy-images fade-in">
+          <div class="philosophy-img">
+            <img src="images/philosophy-main.webp" alt="Yuiel ブランドイメージ" loading="lazy">
+          </div>
+          <div class="philosophy-img">
+            <img src="images/philosophy-sub1.webp" alt="着用イメージ" loading="lazy">
+          </div>
+          <div class="philosophy-img">
+            <img src="images/philosophy-sub2.webp" alt="素材ディテール" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Yuiel -->
+  <section class="why">
+    <div class="container">
+      <div class="why-header fade-in">
+        <p class="section-label">Why Yuiel</p>
+        <h2 class="section-title-ja">選ばれる理由は、構造にある。</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </div>
+          <div class="why-card-title">ワイヤーがない。でも、支える。</div>
+          <p class="why-card-text">ノンワイヤー設計で、締め付けない。独自構造がバストを自然にホールド。朝まで、つけていることを忘れる軽さ。</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+          </div>
+          <div class="why-card-title">軽いのに、整う。</div>
+          <p class="why-card-text">寝返りを打っても、位置をキープする構造。朝のバストラインが、昨日と違うことに気づく。</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="why-card-title">縫い目がない。だから、跡も残さない。</div>
+          <p class="why-card-text">シームレス無縫製。朝の肌はまっさら。敏感肌にもやさしい、なめらかな仕上がり。</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="why-card-title">手洗いしない。でも、型崩れしない。</div>
+          <p class="why-card-text">固定カップだから、洗濯機でそのまま洗える。毎日清潔。形もそのまま。</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <div class="why-card-title">幅広ストラップ。肩に残さない。</div>
+          <p class="why-card-text">幅広設計で重さを分散。アジャスター付きで、自分だけのフィット感に調整。朝まで肩もリラックス。</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <div class="why-card-title">4色。今夜の気分で選ぶ。</div>
+          <p class="why-card-text">White, Beige, Khaki, Black。どの色もやさしいニュアンストーン。お気に入りがある夜は、少し気分がいい。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Showcase -->
+  <section class="showcase">
+    <div class="container">
+      <div class="showcase-block fade-in">
+        <div class="showcase-content">
+          <p class="showcase-label">Feature 01</p>
+          <h3 class="showcase-title">ワイヤーがない。<br>でも、朝のラインが整う。</h3>
+          <p class="showcase-text">
+            ノンワイヤーのリフトアップ構造。<br>
+            締め付けないのに、寝返りを打っても位置をキープ。<br>
+            毎晩の自然なケアが、バストラインを守り続ける。
+          </p>
+          <div class="showcase-tags">
+            <span class="showcase-tag">リフトアップ</span>
+            <span class="showcase-tag">下垂予防</span>
+            <span class="showcase-tag">ノンワイヤー</span>
+          </div>
+          <a href="/#products" class="btn-outline">商品を見る →</a>
+        </div>
+        <div class="showcase-image">
+          <img src="images/feature-01.webp" alt="ノンワイヤーリフト構造" loading="lazy">
+        </div>
+      </div>
+      <div class="showcase-block reverse fade-in">
+        <div class="showcase-content">
+          <p class="showcase-label">Feature 02</p>
+          <h3 class="showcase-title">縫い目がない。<br>だから、毎日つづけられる。</h3>
+          <p class="showcase-text">
+            シームレス無縫製で、肌にやさしくフィット。<br>
+            固定カップで洗濯機OK。手間をかけない。<br>
+            心地よさが、毎日つづく設計。
+          </p>
+          <div class="showcase-tags">
+            <span class="showcase-tag">シームレス</span>
+            <span class="showcase-tag">洗濯機OK</span>
+            <span class="showcase-tag">固定カップ</span>
+          </div>
+          <a href="/#products" class="btn-outline">商品を見る →</a>
+        </div>
+        <div class="showcase-image">
+          <img src="images/feature-02.webp" alt="シームレス素材・洗濯機対応" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Palette -->
+  <section class="colors">
+    <div class="container">
+      <div class="colors-header fade-in">
+        <p class="section-label">Color Palette</p>
+        <h2 class="section-title-ja">4色。どれも、肌になじむ。</h2>
+      </div>
+      <div class="colors-grid">
+        <div class="color-card fade-in">
+          <div class="color-swatch white">
+            <img src="images/color-white.webp" alt="Yuiel ナイトブラ ホワイト" loading="lazy">
+          </div>
+          <div class="color-name-en">White</div>
+          <div class="color-name-ja">白</div>
+          <p class="color-caption">いちばんベーシック。清潔感のある一枚。</p>
+        </div>
+        <div class="color-card fade-in">
+          <div class="color-swatch beige">
+            <img src="images/color-beige.webp" alt="Yuiel ナイトブラ ベージュ" loading="lazy">
+          </div>
+          <div class="color-name-en">Beige</div>
+          <div class="color-name-ja">肌色</div>
+          <p class="color-caption">素肌にとけこむ。見えても気にならない。</p>
+        </div>
+        <div class="color-card fade-in">
+          <div class="color-swatch khaki">
+            <img src="images/color-khaki.webp" alt="Yuiel ナイトブラ カーキ" loading="lazy">
+          </div>
+          <div class="color-name-en">Khaki</div>
+          <div class="color-name-ja">カーキ</div>
+          <p class="color-caption">ニュアンスカラー。大人の選択。</p>
+        </div>
+        <div class="color-card fade-in">
+          <div class="color-swatch black">
+            <img src="images/color-black.webp" alt="Yuiel ナイトブラ ブラック" loading="lazy">
+          </div>
+          <div class="color-name-en">Black</div>
+          <div class="color-name-ja">黒色</div>
+          <p class="color-caption">引き締まる。凛とした印象。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid (BASEの商品ループ) -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="products-header fade-in">
+        <div>
+          <p class="section-label">Collection</p>
+          <h2 class="section-title-ja">商品ラインナップ</h2>
+        </div>
+      </div>
+      <div class="base-items-grid">
+        {block:Items}
+        <div class="base-item-card fade-in">
+          <a href="{ItemLink}">
+            <div class="item-img">
+              {ItemImage}
+            </div>
+            <div class="item-info">
+              <div class="item-title">{ItemTitle}</div>
+              <div class="item-price">{ItemPrice}</div>
+            </div>
+          </a>
+        </div>
+        {/block:Items}
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews-header fade-in">
+        <p class="section-label">Customer Reviews</p>
+        <h2 class="section-title-ja">使っている方の、声。</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <p class="review-text">
+            はじめて着けた夜、軽さに驚きました。ノンワイヤーなのに、ちゃんとホールド感がある。
+            朝起きて跡が残っていないのがうれしくて、3ヶ月毎日使っています。バストラインも整ってきた実感があります。
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">R.K</div>
+            <div>
+              <div class="review-name">R.K. 様</div>
+              <div class="review-meta">30代・Lサイズ 肌色</div>
+              <div class="review-verified">✓ 購入済み</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <p class="review-text">
+            洗濯機でそのまま洗えるのが決め手でした。固定カップだから形も崩れないし、毎日清潔に使えます。
+            3,980円でこの品質は本当にコスパがいい。すぐに色違いのベージュも追加しました。
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">M.T</div>
+            <div>
+              <div class="review-name">M.T. 様</div>
+              <div class="review-meta">20代・Mサイズ 黒色</div>
+              <div class="review-verified">✓ 購入済み</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <p class="review-text">
+            産後、体型が変わってナイトブラを探していました。シームレスで縫い目がないから、肌にやさしい。
+            幅広ストラップで肩も楽です。日中もつけられるので、もう1枚買い足す予定です。
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">Y.S</div>
+            <div>
+              <div class="review-name">Y.S. 様</div>
+              <div class="review-meta">30代・XLサイズ カーキ</div>
+              <div class="review-verified">✓ 購入済み</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-inner fade-in">
+      <p class="cta-label">Start Tonight</p>
+      <h2 class="cta-title">
+        今夜から、変えるのは一枚だけ。
+      </h2>
+      <p class="cta-subtitle">
+        1日わずか133円。ノンワイヤー × シームレス。<br>
+        つけていることを忘れる夜を、試してみる。返金保証付き。
+      </p>
+      <a href="/#products" class="cta-btn">商品を見る</a>
+      <p class="cta-note">¥3,980（税込）/ 全国送料無料</p>
+    </div>
+  </section>
+
+  {/block:IndexPage}
+
+  <!-- ============================================
+       ITEM PAGE（商品詳細ページ）
+  ============================================ -->
+  {block:ItemPage}
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>›</span>
+      {ItemTitle}
+    </div>
+  </div>
+
+  <!-- Product Main -->
+  <section class="product-main">
+    <div class="container">
+      <div class="product-grid">
+        <!-- Gallery (BASEの商品画像を使用) -->
+        <div class="gallery">
+          <div class="gallery-main" id="gallery-main">
+            {ItemImage}
+          </div>
+          <!-- BASEの商品サブ画像がある場合 -->
+          {block:HasItemImages}
+          <div class="gallery-thumbs">
+            {block:ItemImages}
+            <div class="gallery-thumb" data-src="{ItemImageURL}">
+              <img src="{ItemImageURL}" alt="{ItemTitle}">
+            </div>
+            {/block:ItemImages}
+          </div>
+          {/block:HasItemImages}
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+          <div class="product-badges">
+            <span class="p-badge new">New</span>
+          </div>
+
+          <h1 class="product-name">{ItemTitle}</h1>
+          <p class="product-subtitle">ノンワイヤー × シームレス。朝まで、ここちよく。</p>
+
+          <div class="product-rating">
+            <span class="product-rating-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span>
+            <span class="product-rating-text">4.8 / 127件のレビュー</span>
+          </div>
+
+          <div class="product-price">{ItemPrice} <small>税込</small></div>
+          <p class="product-price-note">1日あたり約133円 / 全国送料無料</p>
+
+          <!-- BASE カートフォーム -->
+          <div class="base-cart-form">
+            {AddCartForm}
+          </div>
+
+          <!-- Set offer -->
+          <div class="set-offer">
+            <div class="set-offer-title">Set Discount — 洗い替えに</div>
+            <div class="set-offer-items">
+              <div class="set-offer-item">
+                <span>2枚セット（いちばん人気）</span>
+                <span class="discount">¥7,160 <small style="color:var(--text-light)">10%OFF</small></span>
+              </div>
+              <div class="set-offer-item">
+                <span>3枚セット</span>
+                <span class="discount">¥9,940 <small style="color:var(--text-light)">17%OFF</small></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust -->
+          <div class="product-trust">
+            <div class="product-trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 4v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              全国送料無料（5,000円以上）
+            </div>
+            <div class="product-trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              在庫あり — 最短翌日発送
+            </div>
+            <div class="product-trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+              返金保証対応
+            </div>
+            <div class="product-trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              SSL暗号化 安全決済
+            </div>
+          </div>
+
+          <!-- 商品説明（BASE側で入力した内容） -->
+          <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.06);">
+            {ItemDescription}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features List -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item fade-in">
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+          <div>
+            <div class="feature-title">ノンワイヤー設計</div>
+            <p class="feature-desc">ワイヤーなし。締め付けないのに、自然にホールド。</p>
+          </div>
+        </div>
+        <div class="feature-item fade-in">
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="1.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></div>
+          <div>
+            <div class="feature-title">リフトアップ構造</div>
+            <p class="feature-desc">独自設計でバストを引き上げ。寝返りしても位置をキープ。</p>
+          </div>
+        </div>
+        <div class="feature-item fade-in">
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div>
+            <div class="feature-title">シームレス無縫製</div>
+            <p class="feature-desc">縫い目ゼロ。肌に跡を残さない、なめらかな仕上がり。</p>
+          </div>
+        </div>
+        <div class="feature-item fade-in">
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <div class="feature-title">洗濯機対応</div>
+            <p class="feature-desc">固定カップで型崩れしない。ネットに入れて、そのまま洗える。</p>
+          </div>
+        </div>
+        <div class="feature-item fade-in">
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+          <div>
+            <div class="feature-title">調整ストラップ</div>
+            <p class="feature-desc">幅広設計で重さを分散。アジャスターで自分のフィット感に。</p>
+          </div>
+        </div>
+        <div class="feature-item fade-in">
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div>
+            <div class="feature-title">4カラー展開</div>
+            <p class="feature-desc">White, Beige, Khaki, Black。どれも肌になじむニュアンストーン。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="specs-section">
+    <div class="container">
+      <div class="specs-inner">
+        <div class="specs-header">
+          <p class="section-label">Specifications</p>
+          <h2 class="section-title-ja">商品スペック</h2>
+        </div>
+        <table class="specs-table">
+          <tr><th>素材</th><td>ナイロン 85% / スパンデックス 15%</td></tr>
+          <tr><th>カップ</th><td>固定パッド入り（取り外し不可）</td></tr>
+          <tr><th>着け心地</th><td>ホックなし（プルオンタイプ）</td></tr>
+          <tr><th>カラー</th><td>白 / 肌色（ベージュ）/ カーキ / 黒色</td></tr>
+          <tr><th>サイズ展開</th><td>M / L / XL / XXL / XXXL</td></tr>
+          <tr><th>お手入れ</th><td>洗濯機使用可（ネット使用推奨）</td></tr>
+          <tr><th>生産国</th><td>中国</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size Guide -->
+  <section class="size-guide" id="size-guide">
+    <div class="container">
+      <div class="size-guide-inner">
+        <div class="size-guide-header">
+          <p class="section-label">Size Guide</p>
+          <h2 class="section-title-ja">サイズガイド</h2>
+        </div>
+        <div class="size-note">
+          <strong>カップサイズの測り方</strong><br>
+          バスト差 = トップバスト（胸の最も高い部分）− アンダーバスト（胸のすぐ下）
+        </div>
+        <table class="cup-table">
+          <thead><tr><th>カップ</th><th>バスト差</th></tr></thead>
+          <tbody>
+            <tr><td>Aカップ</td><td>7〜9 cm</td></tr>
+            <tr><td>Bカップ</td><td>10〜12 cm</td></tr>
+            <tr><td>Cカップ</td><td>13〜16 cm</td></tr>
+          </tbody>
+        </table>
+        <table class="size-table">
+          <thead><tr><th>サイズ</th><th>アンダーバスト</th><th>対応カップ</th><th>推奨体重の目安</th></tr></thead>
+          <tbody>
+            <tr><td>M</td><td>75 cm</td><td>A / B / C</td><td>45〜53 kg</td></tr>
+            <tr class="recommended"><td>L</td><td>80 cm</td><td>A / B / C</td><td>53〜60 kg</td></tr>
+            <tr><td>XL</td><td>85 cm</td><td>A / B / C</td><td>60〜68 kg</td></tr>
+            <tr><td>XXL</td><td>90 cm</td><td>A / B / C</td><td>68〜75 kg</td></tr>
+            <tr><td>XXXL</td><td>95 cm</td><td>A / B / C</td><td>75〜85 kg</td></tr>
+          </tbody>
+        </table>
+        <p class="size-hint" style="text-align:center; margin-top: 16px;">
+          迷ったらLサイズがおすすめです。ゆとりのあるフィット感で快適にお使いいただけます。
+        </p>
+        <div class="size-note" style="margin-top: 24px; background: var(--beige);">
+          <strong>サイズ選びのポイント</strong><br>
+          ・サイズの間で迷う方 → 大きいサイズがおすすめ<br>
+          ・伸縮素材のため、締め付けを感じにくい設計です<br>
+          ・ご不明な点はお気軽にお問い合わせください
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="product-reviews" id="product-reviews">
+    <div class="container">
+      <div class="reviews-header">
+        <p class="section-label">Customer Reviews</p>
+        <h2 class="section-title-ja">使っている方の、声。</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <p class="review-text">はじめて着けた夜、軽さに驚きました。ノンワイヤーなのに、ちゃんとホールド感がある。朝起きて跡が残っていないのがうれしくて、3ヶ月毎日使っています。バストラインも整ってきた実感があります。</p>
+          <div class="review-author">
+            <div class="review-avatar">RK</div>
+            <div>
+              <div class="review-name">R.K. 様</div>
+              <div class="review-meta">30代・Lサイズ 肌色 ✓購入済み</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <p class="review-text">洗濯機でそのまま洗えるのが決め手でした。固定カップだから形も崩れないし、毎日清潔に使えます。3,980円でこの品質は本当にコスパがいい。すぐに色違いのベージュも追加しました。</p>
+          <div class="review-author">
+            <div class="review-avatar">MT</div>
+            <div>
+              <div class="review-name">M.T. 様</div>
+              <div class="review-meta">20代・Mサイズ 黒色 ✓購入済み</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <p class="review-text">産後、体型が変わってナイトブラを探していました。シームレスで縫い目がないから、肌にやさしい。幅広ストラップで肩も楽です。日中もつけられるので、もう1枚買い足す予定です。</p>
+          <div class="review-author">
+            <div class="review-avatar">YS</div>
+            <div>
+              <div class="review-name">Y.S. 様</div>
+              <div class="review-meta">30代・XLサイズ カーキ ✓購入済み</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="faq-header">
+          <p class="section-label">FAQ</p>
+          <h2 class="section-title-ja">よくあるご質問</h2>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">洗濯機で洗えますか？</button>
+          <div class="faq-answer">
+            <p>はい、洗濯機でお洗濯いただけます。洗濯ネットに入れて、弱水流モードでの洗濯をおすすめしています。固定カップ設計のため、型崩れしにくく長くお使いいただけます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">サイズの選び方がわかりません</button>
+          <div class="faq-answer">
+            <p>アンダーバストを測っていただき、サイズガイドを参考にお選びください。迷われた場合はLサイズがおすすめです。伸縮性のある素材のため、ゆとりあるフィット感で快適にお使いいただけます。サイズ選びでお悩みの方はお気軽にお問い合わせください。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">カップの大きさは変わりますか？</button>
+          <div class="faq-answer">
+            <p>すべてのサイズでA〜Cカップに対応しています。伸縮性のある素材でフィットするため、カップサイズを問わず快適にお使いいただけます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">日中もつけられますか？</button>
+          <div class="faq-answer">
+            <p>はい、日中のご使用も可能です。シームレス設計でアウターにも響きにくく、リモートワークやお休みの日のリラックスウェアとしてもお使いいただけます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">妊娠中・授乳中でも使えますか？</button>
+          <div class="faq-answer">
+            <p>ノンワイヤーで締め付けが少ないため、マタニティ期のリラックスウェアとしてお使いいただけます。授乳中は授乳用ブラの使用をおすすめしています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">返品・交換はできますか？</button>
+          <div class="faq-answer">
+            <p>商品到着後7日以内に初期不良（破損・汚損・誤配送）が確認された場合、返金または交換にて対応いたします。未開封・未使用の状態でご連絡ください。なお、お客様のご都合による返品についても、商品未使用・タグ付きの状態であれば商品到着後7日以内に限りご相談を承ります。詳しくは特定商取引法に基づく表記をご確認ください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Cart (Mobile) -->
+  <div class="sticky-cart" id="sticky-cart">
+    <div class="sticky-cart-inner">
+      <div class="sticky-cart-info">
+        <div class="name">{ItemTitle}</div>
+        <div class="price">{ItemPrice}</div>
+      </div>
+      <button class="sticky-cart-btn" onclick="document.querySelector('.base-cart-form').scrollIntoView({behavior:'smooth'})">カートに追加</button>
+    </div>
+  </div>
+
+  {/block:ItemPage}
+
+  <!-- ============================================
+       FOOTER（共通 — 全ページ表示）
+  ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">Yuiel</div>
+          <p class="footer-tagline">締め付けない。でも、支える。</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Shop</div>
+          <ul class="footer-links">
+            <li><a href="/">トップページ</a></li>
+            <li><a href="/#products">商品一覧</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Info</div>
+          <ul class="footer-links">
+            <li><a href="/#philosophy">ブランドについて</a></li>
+            <li><a href="{ContactPageURL}">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Policy</div>
+          <ul class="footer-links">
+            <li><a href="{LawPageURL}">特定商取引法</a></li>
+            <li><a href="{PrivacyPageURL}">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2024 Yuiel. Powered by BASE
+      </div>
+    </div>
+  </footer>
+
+  <!-- BASE必須: お問い合わせページ -->
+  {block:ContactPage}
+  <div style="margin-top: 72px; padding: 60px 0; background: var(--white);">
+    <div class="container">
+      <h1 class="section-title-ja" style="text-align:center; margin-bottom: 40px;">お問い合わせ</h1>
+      {ContactContentsTag}
+    </div>
+  </div>
+  {/block:ContactPage}
+
+  <!-- BASE必須: プライバシーポリシーページ -->
+  {block:PrivacyPage}
+  <div style="margin-top: 72px; padding: 60px 0; background: var(--white);">
+    <div class="container">
+      <h1 class="section-title-ja" style="text-align:center; margin-bottom: 40px;">プライバシーポリシー</h1>
+      {PrivacyContentsTag}
+    </div>
+  </div>
+  {/block:PrivacyPage}
+
+  <!-- BASE必須: 特定商取引法ページ -->
+  {block:LawPage}
+  <div style="margin-top: 72px; padding: 60px 0; background: var(--white);">
+    <div class="container">
+      <h1 class="section-title-ja" style="text-align:center; margin-bottom: 40px;">特定商取引法に基づく表記</h1>
+      {LawContentsTag}
+    </div>
+  </div>
+  {/block:LawPage}
+
+  <!-- ============================================
+       JavaScript（共通）
+  ============================================ -->
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Hamburger menu (mobile)
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('.nav');
+    if (hamburger && nav) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = nav.style.display === 'flex';
+        nav.style.display = isOpen ? 'none' : 'flex';
+        if (!isOpen) {
+          nav.style.flexDirection = 'column';
+          nav.style.position = 'absolute';
+          nav.style.top = '72px';
+          nav.style.right = '24px';
+          nav.style.background = 'var(--bg)';
+          nav.style.padding = '24px';
+          nav.style.borderRadius = '4px';
+          nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.1)';
+        }
+      });
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.parentElement.classList.toggle('open');
+      });
+    });
+
+    // Gallery thumbnail switcher (item page)
+    const mainGallery = document.getElementById('gallery-main');
+    if (mainGallery) {
+      const thumbs = document.querySelectorAll('.gallery-thumb');
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          thumbs.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          const mainImg = mainGallery.querySelector('img');
+          if (mainImg && thumb.dataset.src) {
+            mainImg.src = thumb.dataset.src;
+          }
+        });
+      });
+
+      // Sticky cart show on scroll (mobile)
+      const stickyCart = document.getElementById('sticky-cart');
+      const cartForm = document.querySelector('.base-cart-form');
+      if (cartForm && stickyCart) {
+        const cartObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (window.innerWidth <= 768) {
+              stickyCart.style.display = entry.isIntersecting ? 'none' : 'block';
+            }
+          });
+        });
+        cartObserver.observe(cartForm);
+      }
+    }
+  </script>
+
+</body>
+</html>
